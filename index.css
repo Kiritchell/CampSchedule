@@ -1,0 +1,32 @@
+*{font-family: rift-soft, sans-serif;
+margin:1% 1% 1% 1%;
+line-height: 75%;
+text-align: center;
+align-content: center;}
+.header{font-weight :700px;
+    font-size:32px;
+margin-bottom:3%;}
+.day{font-weight :700px;
+    font-size:28px;
+margin-bottom:3%;
+font-style: underline;}
+.time{font-size:24px}
+.event{font-size:22px}
+.add-info{font-size:16px}
+.footer{background: gray;
+height:75px;
+width:100%;
+position:absolute;
+bottom:0;
+left:0;
+margin-left:0;
+margin-bottom:0;
+display:flex;
+justify-content: center;
+text-align:center;
+}
+#treelogo{height:60px;
+    width:auto;
+    display:flex;
+    bottom:0;
+   }

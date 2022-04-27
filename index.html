@@ -10,24 +10,98 @@
   </head>
   <body>
     <h1 class="header">Camp Schedule</h1>
+    <div onload="decideTeam()" class="TeamBox">
     <button onclick="showTech()">Tech</button>
-    <button onclick="hideTech()">Band</button>
+    <button onclick="showBand()">Band</button>
+    <button onclick="showAdmin()">Admin</button>
+    </div>
+    <br />
+
+    <button onclick="showTuesdayHS(); hideWedHS(); hideThurHS(); hideFriHS()">
+      Tuesday
+    </button>
+    <button onclick="showWedHS(); hideTuesdayHS(); hideThurHS(); hideFriHS()">
+      Wednesday
+    </button>
+    <button onclick="showThurHS(); hideTuesdayHS(); hideWedHS(); hideFriHS()">
+      Thursday
+    </button>
+    <button onclick="showFriHS(); hideTuesdayHS(); hideWedHS(); hideThurHS()">
+      Friday
+    </button>
     <div>
-      <h2 class="day"><i>HS Tuesday the 19th</i></h2>
-      <div class="eventTech">
-        <h3 id="time" class="time">6:00 AM</h3>
-        <p class="event">Event</p>
-        <p class="add-info">----------------</p>
-      </div>
-      <div class="eventTech">
-        <h3 id="time" class="time">6:00 AM</h3>
-        <p class="event">Event</p>
-        <p class="add-info">----------------</p>
+      <h2 id="HST" class="day"><i>HS Tuesday</i></h2>
+      <h2 id="HSW" class="day"><i>HS Wednesday</i></h2>
+      <h2 id="HSTH" class="day"><i>HS Thursday</i></h2>
+      <h2 id="HSF" class="day"><i>HS Friday</i></h2>
+      <div class="schedulelist">
+        <div class="Band Tech">
+          <h3 id="time" class="time">6:00 AM</h3>
+          <p class="event">Call Time</p>
+          <p class="add-info">Holcomb</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Band Tech">
+          <h3 id="time" class="time">7:00 AM</h3>
+          <p class="event">Breakfast</p>
+          <p class="add-info">Delivered to Holcomb</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Admin">
+          <h3 id="time" class="time">7:00 AM</h3>
+          <p class="event">Breakfast</p>
+          <p class="event">Dining Hall</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Admin Band Tech">
+          <h3 id="time" class="time">8:30 AM</h3>
+          <p class="event">Production Meeting</p>
+          <p class="add-info">Holcomb Stage</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Band Tech Admin">
+          <h3 id="time" class="time">9:00 AM</h3>
+          <p class="event">Session</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Band Tech">
+          <h3 id="time" class="time">12:00 PM</h3>
+          <p class="event">Lunch</p>
+          <p class="add-info">Dining Hall</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Band Tech">
+          <h3 id="time" class="time">3:00 PM</h3>
+          <p class="event">Call time</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Band Tech">
+          <h3 id="time" class="time">5:00 PM</h3>
+          <p class="event">Dinner</p>
+          <p class="add-info">Dining Hall</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Admin Band Tech">
+          <h3 id="time" class="time">6:15 PM</h3>
+          <p class="event">Production Meeting</p>
+          <p class="add-info">Holcomb Stage</p>
+          <p class="add-info">----------------</p>
+        </div>
+        <div class="Band Tech Admin">
+          <h3 id="time" class="time">7:00 PM</h3>
+          <p class="event">Session</p>
+          <p class="add-info">----------------</p>
+        </div>
       </div>
       <div class="footer">
-        <img onclick="encourage()" id="treelogo" src="https://i.ibb.co/JjbhXL6/tree.png" />
+        <img
+          onclick="encourage()"
+          id="treelogo"
+          src="https://i.ibb.co/JjbhXL6/tree.png"
+        />
       </div>
     </div>
   </body>
+ 
   <script src="index.js"></script>
 </html>

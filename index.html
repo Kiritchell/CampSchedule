@@ -7,28 +7,79 @@
     <link rel="stylesheet" href="https://use.typekit.net/skq0csu.css" />
     <link rel="stylesheet" href="index.css" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myModal").modal("show");
+      });
+    </script>
   </head>
+
   <body>
-    <h1 class="header">Camp Schedule</h1>
-    <div onload="decideTeam()" class="TeamBox">
-    <button onclick="showTech()">Tech</button>
-    <button onclick="showBand()">Band</button>
-    <button onclick="showAdmin()">Admin</button>
+    <div id="fullback"></div>
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">1. Pick a Team!</h5>
+          </div>
+          <div class="modal-body">
+            <div class="Teams">
+              <button class="modal-btn" onclick="showTech()">Tech</button>
+              <button class="modal-btn" onclick="showBand()">Band</button>
+              <button class="modal-btn" onclick="showAdmin()">Admin</button>
+            </div>
+          </div>
+          <div class="modal-header">
+            <h5 class="modal-title">2. Pick a day!</h5>
+          </div>
+          <div id="day-btns">
+            <button
+              class="modal-btn"
+              data-dismiss="modal"
+              onclick="showTuesdayHS(); hideWedHS(); hideThurHS(); hideFriHS()"
+            >
+              Tuesday
+            </button>
+            <button
+              class="modal-btn"
+              data-dismiss="modal"
+              onclick="showWedHS(); hideTuesdayHS(); hideThurHS(); hideFriHS()"
+            >
+              Wednesday
+            </button>
+            <button
+              class="modal-btn"
+              data-dismiss="modal"
+              onclick="showThurHS(); hideTuesdayHS(); hideWedHS(); hideFriHS()"
+            >
+              Thursday
+            </button>
+            <button
+              class="modal-btn"
+              data-dismiss="modal"
+              onclick="showFriHS(); hideTuesdayHS(); hideWedHS(); hideThurHS()"
+            >
+              Friday
+            </button>
+          </div>
+          <!--modal-body Div-->
+        </div>
+        <!--modal-content Div-->
+      </div>
+      <!--modal-dialogue Div-->
     </div>
+    <!--myModal Div-->
+
+    <h1 class="header">Camp Schedule</h1>
+    <p><i>reload the page to reselect</i></p>
     <br />
 
-    <button onclick="showTuesdayHS(); hideWedHS(); hideThurHS(); hideFriHS()">
-      Tuesday
-    </button>
-    <button onclick="showWedHS(); hideTuesdayHS(); hideThurHS(); hideFriHS()">
-      Wednesday
-    </button>
-    <button onclick="showThurHS(); hideTuesdayHS(); hideWedHS(); hideFriHS()">
-      Thursday
-    </button>
-    <button onclick="showFriHS(); hideTuesdayHS(); hideWedHS(); hideThurHS()">
-      Friday
-    </button>
     <div>
       <h2 id="HST" class="day"><i>HS Tuesday</i></h2>
       <h2 id="HSW" class="day"><i>HS Wednesday</i></h2>
@@ -102,6 +153,6 @@
       </div>
     </div>
   </body>
- 
+
   <script src="index.js"></script>
 </html>

@@ -1,6 +1,10 @@
 //setting current time
 var now = new Date();
 var hours = now.getHours();
+const teamPicked = document.getElementById('modal-team-picked')
+const dayPicked = document.getElementById('modal-day-picked')
+const writeDayTeam = document.getElementById('team-and-day')
+
 
 var currentTime = now.toLocaleString("en-US", {
     hour: "numeric",
@@ -30,16 +34,19 @@ function hideBand(){
   
 function showTech(){
     const boxes = document.getElementsByClassName('Tech');
+    teamPicked.textContent = ("Tech Team 🥳")
     for (const box of boxes) {box.style.display = 'inherit';}
   };
 
 function showAdmin(){
     const boxes = document.getElementsByClassName('Admin');
+    teamPicked.textContent = ("Admin 🌲")
     for (const box of boxes) {box.style.display = 'inherit';}
   };
 
 function showBand(){
     const boxes = document.getElementsByClassName('Band');
+    teamPicked.textContent = ("Band 🎸")
     for (const box of boxes) {box.style.display = 'inherit';}
   };
 
@@ -49,7 +56,8 @@ function showBand(){
 
   function showTuesdayHS(){
     var link = document.getElementById('HST');
-    link.style.display='inherit';}
+    dayPicked.textContent = ("t")
+    link.style.display='initial'}
     
 function hideTuesdayHS(){
     var link = document.getElementById('HST');
@@ -61,6 +69,7 @@ function hideWedHS(){
 
 function showWedHS(){
      var link = document.getElementById('HSW');
+     dayPicked.textContent = ("Wednesday")
      link.style.display='inherit';}
 
      function hideThurHS(){
@@ -69,6 +78,7 @@ function showWedHS(){
  
  function showThurHS(){
       var link = document.getElementById('HSTH');
+      dayPicked.textContent = ("Thursday")
       link.style.display='inherit';}
       
       function hideFriHS(){
@@ -77,6 +87,7 @@ function showWedHS(){
    
    function showFriHS(){
         var link = document.getElementById('HSF');
+        dayPicked.textContent = ("Friday")
         link.style.display='inherit';}
         
         function decideTeam(){
@@ -84,3 +95,10 @@ function showWedHS(){
           for (const box of boxes) {box.style.display = 'inherit';}
         };
   
+function assignTeam(teamVal){
+  writeDayTeam.textContent =teamVal
+}
+function assignDay(dayVal){
+  writeDayTeam.textContent += " " + dayVal
+}
+

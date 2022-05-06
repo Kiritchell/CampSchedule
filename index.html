@@ -25,45 +25,69 @@
     <div id="myModal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">1. Pick a Team!</h5>
-          </div>
+          <h5 class="modal-title">1. Pick a Team!</h5>
+          <p id="modal-team-picked"></p>
           <div class="modal-body">
             <div class="Teams">
-              <button class="modal-btn" onclick="showTech()">Tech</button>
-              <button class="modal-btn" onclick="showBand()">Band</button>
-              <button class="modal-btn" onclick="showAdmin()">Admin</button>
+              <button
+                value="Tech 🥳"
+                class="modal-btn"
+                onclick="showTech(); assignTeam(this.value)"
+              >
+                Tech
+              </button>
+              <button
+                value="Band 🎸"
+                class="modal-btn"
+                onclick="showBand(); assignTeam(this.value)"
+              >
+                Band
+              </button>
+              <button
+                value="Admin 🌲"
+                class="modal-btn"
+                onclick="showAdmin(); assignTeam(this.value)"
+              >
+                Admin
+              </button>
             </div>
           </div>
-          <div class="modal-header">
-            <h5 class="modal-title">2. Pick a day!</h5>
-          </div>
+          <h5 class="modal-title">2. Pick a day!</h5>
+          <p id="modal-day-picked"></p>
           <div id="day-btns">
             <button
+              id="HST"
+              value="Tuesday"
               class="modal-btn"
               data-dismiss="modal"
-              onclick="showTuesdayHS(); hideWedHS(); hideThurHS(); hideFriHS()"
+              onclick="showTuesdayHS(); hideWedHS(); hideThurHS(); hideFriHS(); assignDay(this.value)"
             >
               Tuesday
             </button>
             <button
+              id="HSW"
+              value="Wednesday"
               class="modal-btn"
               data-dismiss="modal"
-              onclick="showWedHS(); hideTuesdayHS(); hideThurHS(); hideFriHS()"
+              onclick="showWedHS(); hideTuesdayHS(); hideThurHS(); hideFriHS(); assignDay(this.value);"
             >
               Wednesday
             </button>
             <button
+              id="HSTH"
+              value="Thursday"
               class="modal-btn"
               data-dismiss="modal"
-              onclick="showThurHS(); hideTuesdayHS(); hideWedHS(); hideFriHS()"
+              onclick="showThurHS(); hideTuesdayHS(); hideWedHS(); hideFriHS(); assignDay(this.value)"
             >
               Thursday
             </button>
             <button
+              id="HSF"
+              value="Friday"
               class="modal-btn"
               data-dismiss="modal"
-              onclick="showFriHS(); hideTuesdayHS(); hideWedHS(); hideThurHS()"
+              onclick="showFriHS(); hideTuesdayHS(); hideWedHS(); hideThurHS(); assignDay(this.value)"
             >
               Friday
             </button>
@@ -79,17 +103,14 @@
     <h1 class="header">Camp Schedule</h1>
     <p><i>reload the page to reselect</i></p>
     <br />
-
+    <div id="linebreak"></div>
     <div>
-      <h2 id="HST" class="day"><i>HS Tuesday</i></h2>
-      <h2 id="HSW" class="day"><i>HS Wednesday</i></h2>
-      <h2 id="HSTH" class="day"><i>HS Thursday</i></h2>
-      <h2 id="HSF" class="day"><i>HS Friday</i></h2>
+      <h2 id="team-and-day">team</h2>
       <div class="schedulelist">
-        <div class="Band Tech">
+        <div class="Band Tech" id="HST">
           <h3 id="time" class="time">6:00 AM</h3>
           <p class="event">Call Time</p>
-          <p class="add-info">Holcomb</p>
+          <p class="add-info">Holcomb Tuesday Only</p>
           <p class="add-info">----------------</p>
         </div>
         <div class="Band Tech">
@@ -156,3 +177,16 @@
 
   <script src="index.js"></script>
 </html>
+
+<!--      
+          Classes to pick from - Band Tech Admin
+          Classes to pick from HSM HST HSW HSTH HSF
+
+        WRITE LIKE THIS BELOW
+
+          <div class="Band Tech">
+          <h3 id="time" class="time">6:00 AM</h3>
+          <p class="event">Call Time</p>
+          <p class="add-info">Holcomb</p>
+          <p class="add-info">----------------</p>
+        </div>-->
